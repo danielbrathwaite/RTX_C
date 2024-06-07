@@ -57,8 +57,8 @@ vec3 cross(vec3 v1, vec3 v2) {
 }
 
 vec3 normalize(vec3 v1) {
-    float length = sqrtf(dot(v1, v1));
-    return scale(v1, 1.0 / length);
+    float length = 1.0 / sqrtf(dot(v1, v1));
+    return scale(v1, length);
 }
 
 vec3 multiply(vec3 v1, vec3 v2) {

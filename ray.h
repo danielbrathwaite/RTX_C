@@ -10,6 +10,7 @@
 
 #include "vec3.h"
 #include "sphere.h"
+#include "tri.h"
 
 typedef struct ray {
     vec3 origin;
@@ -17,6 +18,6 @@ typedef struct ray {
 } ray;
 
 vec3 at(ray r, float t);
-vec3 trace(ray ray, int maxBounceCount, sphere *spheres);
+vec3 trace(ray ray, int maxBounceCount, sphere *spheres, tri *tris);
 
 #endif /* SRC_RAY_H_ */
