@@ -17,15 +17,15 @@ typedef struct vec3 {
 } vec3;
 
 float random_f();
-vec3 scale(vec3 *v1, float scale);
-vec3 add(vec3 *v1, vec3*v2);
-vec3 subtract(vec3 *v1, vec3*v2);
-float dot(vec3 *v1, vec3*v2);
-vec3 cross(vec3 *v1, vec3*v2);
-vec3 normalize(vec3*v1);
-vec3 multiply(vec3*v1, vec3*v2);
+vec3 scale(vec3 v1, float scale);
+vec3 add(vec3 v1, vec3 v2);
+vec3 subtract(vec3 v1, vec3 v2);
+float dot(vec3 v1, vec3 v2);
+vec3 cross(vec3 v1, vec3 v2);
+vec3 normalize(vec3 v1);
+vec3 multiply(vec3 v1, vec3 v2);
 vec3 random_in_unit_sphere();
-vec3 reflect(vec3*v1, vec3 *n);
-vec3 lerp(vec3*v1, vec3*v2, float lerpval);
+vec3 reflect(vec3 v1, vec3 n);
+vec3 lerp(vec3 v1, vec3 v2, float lerpval);
 
 #endif /* SRC_VEC3_H_ */

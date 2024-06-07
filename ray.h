@@ -12,11 +12,11 @@
 #include "sphere.h"
 
 typedef struct ray {
-    vec3 *origin;
-    vec3 *dir;
+    vec3 origin;
+    vec3 dir;
 } ray;
 
-vec3 at(ray *r, float t);
-vec3 trace(ray *ray, int maxBounceCount, sphere *spheres);
+vec3 at(ray r, float t);
+vec3 trace(ray ray, int maxBounceCount, sphere *spheres);
 
 #endif /* SRC_RAY_H_ */

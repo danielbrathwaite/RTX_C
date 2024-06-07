@@ -11,12 +11,12 @@
 #include "vec3.h"
 #include "rtx_material.h"
 
-#define NUM_SPHERES 4
+#define NUM_SPHERES 5
 
 typedef struct sphere {
     vec3 center;
     float radius;
-    rtx_material *material;
+    rtx_material material;
 } sphere;
 
 #endif /* SRC_SPHERE_H_ */

@@ -13,9 +13,9 @@
 
 typedef struct hitInfo {
     int hit;
-    rtx_material *material;
-    vec3 *normal;
-    vec3 *hitPoint;
+    rtx_material material;
+    vec3 normal;
+    vec3 hitPoint;
     float t;
 } hitInfo;
 
