@@ -27,8 +27,6 @@ float hit_sphere(ray r, sphere s) {
     float c = dot(oc, oc) - (s.radius * s.radius);
     float discriminant = b*b - 4.0f*a*c;
 
-    // printf("{%.2f %.2f %.2f}  %.2f\n",r.dir.x, r.dir.y, r.dir.z, a);
-
     if (discriminant < 0.0f) {
         return -1.0f;
     } else {
@@ -104,8 +102,6 @@ vec3 trace(ray ray, int maxBounceCount, sphere *spheres, tri *tris){
         rtx_material material = hitInfo.material;
 
         if(hitInfo.hit){
-            //vec3 half = {0.5, 0.5, 0.5};
-            //return add(scale(normalize(hitInfo.normal), 0.5), half);
             ray.origin = hitInfo.hitPoint;
             vec3 diffuseDir = normalize(add(hitInfo.normal, random_in_unit_sphere()));
             vec3 specularDir = reflect(ray.dir, hitInfo.normal);

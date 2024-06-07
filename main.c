@@ -161,24 +161,12 @@ int main() {
 
     vec3 camera_pos = {0.0, -40.0, 30.0};
 
-    FILE *fptr;
-
-    // Open a file in writing mode
-    fptr = fopen("ppmout.ppm", "w");
-
-
-    // Write some text to the file
-    fprintf(fptr, "P3\n%d %d\n255\n", WIDTH, HEIGHT);
-    // printf("P3\n%d %d\n255\n", WIDTH, HEIGHT);
-    
     int total_samples = WIDTH * HEIGHT;
     for(int j = HEIGHT - 1; j >= 0; j--){
         for(int i = 0; i < WIDTH; i++){
 
             vec3 attenuated_color = {0.0f, 0.0f, 0.0f};
 
-
-            // printf("Checking for hit on sphere, direction %.2f %.2f %.2f\n", r.dir.x, r.dir.y, r.dir.z);
             for(int sample = 0; sample < samples_per_pixel; sample++){
                 vec3 direction = {(float)(i + random_f() - WIDTH/2), (float)WIDTH, (float)(j + random_f() - HEIGHT/2)};
                 direction = normalize(direction);
@@ -202,14 +190,9 @@ int main() {
             unsigned char x = i; 
             unsigned char y = HEIGHT - j - 1;
             unsigned char final_color = ((int)(attenuated_color.x*255) & 224) | (((int)(attenuated_color.y*255) & 224) >> 3) | (((int)(attenuated_color.z*255) & 192) >> 6);
-
-            fprintf(fptr, "%d %d %d\n", (int)(attenuated_color.x*255) & 224, (int)(attenuated_color.y*255) & 224, (int)(attenuated_color.z*255) & 192);
-            //fprintf(fptr, "%d %d %d\n", (int)(attenuated_color.x*255), (int)(attenuated_color.y*255), (int)(attenuated_color.z*255));
         }
     }
 
-    // Close the file
-    fclose(fptr); 
     return 0;
 }
 
